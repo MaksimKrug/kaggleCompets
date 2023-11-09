@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 catboost_info
-/data
+# /data
