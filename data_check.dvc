@@ -1,6 +1,0 @@
-outs:
-- md5: 91e5a5d04f7d63c00a57dc65ae26f51f.dir
-  size: 1140685604
-  nfiles: 6
-  hash: md5
-  path: data_check
