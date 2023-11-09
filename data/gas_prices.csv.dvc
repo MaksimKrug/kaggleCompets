@@ -1,0 +1,5 @@
+outs:
+- md5: 61b3f8675ea0776f2e6e1f16a64c8023
+  size: 23898
+  hash: md5
+  path: gas_prices.csv

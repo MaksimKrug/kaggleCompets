@@ -1,0 +1,5 @@
+outs:
+- md5: 3e7a5f6abf6a10d280346e066021bab5
+  size: 769348
+  hash: md5
+  path: electricity_prices.csv
