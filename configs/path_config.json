@@ -1,0 +1,8 @@
+{
+    "catboost_hyperopt": "src/artifacts/catboost_hyperopt.pkl",
+    "catboost_best_params": "src/artifacts/catboost_params.json",
+    "catboost_model": "src/artifacts/catboost_baseline.cbm",
+    "catboost_feature_importance": "src/artifacts/catboost_feature_importance.png",
+    "catboost_optimization_history": "src/artifacts/optuna_optimization_history.png",
+    "catboost_best_score": "src/artifacts/catboost_best_score.json"
+}

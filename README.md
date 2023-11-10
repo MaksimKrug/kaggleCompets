@@ -19,3 +19,74 @@ This is a forecasting competition using the time series API. The private leaderb
 
 
 ## Repository structure
+------------
+    ├── .dvc                   <- DVC utils
+    │
+    ├── configs
+    │   └── path_config.json   <- Configs for paths
+    │ 
+    ├── data
+    │   └── *.dvc              <- .dvc files for DVC
+    │
+    ├── notebooks
+    │   └── EDA.ipynb          <- EDA notebook (saved outputs)
+    │
+    ├── src                
+    │   ├── artifacts          <- All artifacts like images, .pkl files or models
+    │   │
+    │   ├── data_processing    <- Data processing scripts
+    │   │    
+    │   ├── logs               <- logs folder
+    │   │
+    │   ├── training           <- Python scripts for training
+    │   │
+    │   ├──  utils.py          <- Utils (logger only)
+    |   |
+    │   ├──  predict.py        <- Predict script (placeholder)
+    |
+    ├── tests                  <- Pytests (only two)
+    |
+    ├── .dvcignore
+    ├── .gitignore
+    ├── .pylintrc
+    ├── Dockerfile
+    ├── README.md
+    ├── requirements.txt
+    ├── setup.py   
+
+--------
+
+## Reproduce the pipeline
+### Locally
+install dependencies
+```
+pip install -r requirement.txt
+```
+
+download all .csv files from gdrive
+```
+dvc pull
+```
+
+optimizer pipeline
+```
+python -m src.training.hyperopt_optuna --data_path="./data/train.csv" --trials=3 --timeout=180
+```
+
+train model
+```
+python -m src.training.train_model --data_path="./data/train.csv" --study_path="./src/artifacts/catboost_hyperopt.pkl"
+```
+tests
+```
+pytest tests
+```
+
+### docker
+run docker container
+```
+docker build --rm -t enefit .
+docker run --rm -v $PWD/data:/workdir/data -it enefit 
+```
+<b>Run local commands inside docker container</b>
+
